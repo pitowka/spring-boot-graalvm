@@ -13,14 +13,15 @@ https://docs.spring.io/spring-boot/how-to/native-image/developing-your-first-app
 - urobit docker compose ak chcem mat aj ine systemy (napr. postgres)
 
 - docker pre appku
+```
 FROM scratch
 COPY build/native/nativeCompile/graalvm /app
 ENTRYPOINT ["/app"]
+```
 - a potom: docker build -t graalvm:latest .
 
 - vysledny docker-compose.yml asi takto:
-version: '3.8'
-
+```
 services:
   app:
     image: moje-app:latest
@@ -49,5 +50,5 @@ services:
 
 volumes:
   pgdata:
-
+```
 
